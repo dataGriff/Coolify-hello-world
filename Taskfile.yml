@@ -1,0 +1,103 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install dependencies for both frontend and backend
+    cmds:
+      - echo "Installing backend dependencies..."
+      - cd backend && npm install
+      - echo "Installing frontend dependencies..."
+      - cd frontend && npm install
+      - echo "All dependencies installed!"
+
+  dev-backend:
+    desc: Run backend in development mode
+    dir: backend
+    cmds:
+      - npm run dev
+
+  dev-frontend:
+    desc: Run frontend in development mode
+    dir: frontend
+    cmds:
+      - npm start
+
+  docker-build:
+    desc: Build all Docker images
+    cmds:
+      - docker-compose build
+
+  docker-up:
+    desc: Start all services with Docker Compose
+    cmds:
+      - docker-compose up -d
+      - echo "Services started! Frontend: http://localhost:3000, Backend: http://localhost:3001"
+
+  docker-down:
+    desc: Stop all services
+    cmds:
+      - docker-compose down
+
+  docker-logs:
+    desc: Show logs from all services
+    cmds:
+      - docker-compose logs -f
+
+  docker-restart:
+    desc: Restart all services
+    cmds:
+      - docker-compose restart
+
+  docker-clean:
+    desc: Stop services and remove volumes
+    cmds:
+      - docker-compose down -v
+      - echo "All containers and volumes removed!"
+
+  start:
+    desc: Start the application locally with Docker
+    cmds:
+      - task: docker-up
+
+  stop:
+    desc: Stop the application
+    cmds:
+      - task: docker-down
+
+  restart:
+    desc: Restart the application
+    cmds:
+      - task: docker-restart
+
+  logs:
+    desc: View application logs
+    cmds:
+      - task: docker-logs
+
+  clean:
+    desc: Clean up everything including volumes
+    cmds:
+      - task: docker-clean
+
+  test-backend:
+    desc: Test backend API endpoints
+    cmds:
+      - echo "Testing backend health endpoint..."
+      - curl -f http://localhost:3001/health || echo "Backend not running"
+
+  test-frontend:
+    desc: Test frontend accessibility
+    cmds:
+      - echo "Testing frontend..."
+      - curl -f http://localhost:3000 || echo "Frontend not running"
+
+  test:
+    desc: Run all tests
+    cmds:
+      - task: test-backend
+      - task: test-frontend
+
+  help:
+    desc: Show available tasks
+    cmds:
+      - task --list
