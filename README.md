@@ -308,6 +308,25 @@ REACT_APP_API_URL=http://localhost:3001
 
 ## 🧪 Testing
 
+### Automated API Testing
+
+A test script is provided to validate the backend API:
+
+```bash
+# Test local API
+./test-api.sh
+
+# Test API on different host
+./test-api.sh http://your-api-domain.com
+```
+
+The script tests:
+- Health check endpoint
+- User registration
+- User login
+- Profile retrieval
+- Profile updates
+
 ### Test Backend
 
 ```bash

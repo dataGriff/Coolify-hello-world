@@ -214,6 +214,12 @@ app.put('/api/profile', authenticateToken, async (req, res) => {
 
 // Start server
 const startServer = async () => {
+  // Validate required environment variables
+  if (!process.env.JWT_SECRET) {
+    console.error('FATAL ERROR: JWT_SECRET is not defined.');
+    process.exit(1);
+  }
+  
   await initDB();
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

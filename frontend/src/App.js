@@ -31,7 +31,7 @@ function App() {
       });
       setUser(response.data.user);
       setIsLoggedIn(true);
-      setFormData({ ...formData, favouriteColour: response.data.user.favouriteColour || '' });
+      setFormData(prev => ({ ...prev, favouriteColour: response.data.user.favouriteColour || '' }));
     } catch (err) {
       localStorage.removeItem('token');
       setIsLoggedIn(false);
@@ -61,7 +61,7 @@ function App() {
       localStorage.setItem('token', response.data.token);
       setUser(response.data.user);
       setIsLoggedIn(true);
-      setFormData({ ...formData, password: '', favouriteColour: response.data.user.favouriteColour || '' });
+      setFormData(prev => ({ ...prev, password: '', favouriteColour: response.data.user.favouriteColour || '' }));
       setSuccess(response.data.message);
     } catch (err) {
       setError(err.response?.data?.error || 'An error occurred');
