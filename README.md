@@ -5,8 +5,10 @@ A full-stack application for managing user profiles with authentication. Users c
 ## 📖 Documentation
 
 - **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Architecture Overview](ARCHITECTURE.md)** - System design and architecture
 - **[Coolify Deployment](COOLIFY.md)** - Deploy to Coolify platform
 - **[Contributing Guide](CONTRIBUTING.md)** - Development and contribution guidelines
+- **[Changelog](CHANGELOG.md)** - Version history and changes
 
 ## 🎯 Quick Links
 
