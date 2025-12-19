@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e  # Exit on any error
 
 # Simple API Test Script
 # This script tests the basic functionality of the backend API

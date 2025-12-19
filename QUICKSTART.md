@@ -17,7 +17,24 @@ git clone https://github.com/dataGriff/Coolify-hello-world.git
 cd Coolify-hello-world
 ```
 
-### Step 2: Start the Application
+### Step 2: Set JWT Secret (Required)
+
+```bash
+# Copy environment template
+cp .env.example .env
+
+# Generate a secure JWT secret
+openssl rand -base64 32
+
+# Edit .env and paste the generated secret as JWT_SECRET value
+```
+
+Or set it directly:
+```bash
+export JWT_SECRET=$(openssl rand -base64 32)
+```
+
+### Step 3: Start the Application
 
 **Option A: Using Task (Recommended)**
 ```bash
@@ -29,7 +46,7 @@ task start
 docker compose up -d
 ```
 
-### Step 3: Open Your Browser
+### Step 4: Open Your Browser
 
 Visit [http://localhost:3000](http://localhost:3000)
 
