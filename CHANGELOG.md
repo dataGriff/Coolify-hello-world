@@ -58,13 +58,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned
+### Known Limitations
+- **Rate Limiting**: API endpoints are not rate-limited. For production use, consider adding rate limiting middleware (e.g., express-rate-limit) to prevent abuse.
+
+### Planned Enhancements
+- API rate limiting (express-rate-limit)
 - Email verification
 - Password reset functionality
 - User avatar upload
 - More profile fields
 - Admin dashboard
-- API rate limiting
 - Refresh tokens
 - Two-factor authentication
 - Activity logging

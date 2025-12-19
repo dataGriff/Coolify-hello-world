@@ -184,10 +184,20 @@ A full-stack application for managing user profiles with authentication. Users c
 ## 🔒 Security Features
 
 - **Password Hashing**: Passwords are hashed using bcrypt before storage
-- **JWT Authentication**: Secure token-based authentication
-- **CORS Protection**: Configured CORS for API security
+- **JWT Authentication**: Secure token-based authentication with required JWT_SECRET
+- **CORS Protection**: Configurable CORS for API security
 - **SQL Injection Prevention**: Parameterized queries using pg library
 - **Environment Variables**: Sensitive data stored in environment variables
+- **Input Validation**: Server-side validation of all user inputs
+
+### Security Notes
+
+⚠️ **For production deployment**, consider adding:
+- **Rate Limiting**: Add `express-rate-limit` to prevent brute-force attacks
+- **HTTPS**: Always use SSL/TLS in production (Coolify handles this automatically)
+- **Monitoring**: Set up logging and monitoring for security events
+- **Backup**: Regular database backups
+- **Updates**: Keep dependencies updated regularly
 
 ## 🐳 Deployment on Coolify
 
