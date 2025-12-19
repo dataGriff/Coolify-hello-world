@@ -2,6 +2,21 @@
 
 A full-stack application for managing user profiles with authentication. Users can register, login, and update their username and favourite colour.
 
+## 📖 Documentation
+
+- **[Quick Start Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Coolify Deployment](COOLIFY.md)** - Deploy to Coolify platform
+- **[Contributing Guide](CONTRIBUTING.md)** - Development and contribution guidelines
+
+## 🎯 Quick Links
+
+- [Features](#-features)
+- [Architecture](#-architecture)
+- [Running Locally](#-running-locally)
+- [How to Use](#-how-to-use-the-application)
+- [API Endpoints](#-api-endpoints)
+- [Deployment](#-deployment-on-coolify)
+
 ## 🚀 Features
 
 - **User Authentication**: Secure JWT-based authentication system
